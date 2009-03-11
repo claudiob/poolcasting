@@ -1,0 +1,12 @@
+<p>
+  <b>Name:</b>
+  <%=h @artist.name %>
+</p>
+
+<p>
+  <b>Popularity:</b>
+  <%=h @artist.popularity %>
+</p>
+
+<%= link_to 'Songs', artist_songs_path(@artist) %>
+<%= link_to 'Back', artists_path %>

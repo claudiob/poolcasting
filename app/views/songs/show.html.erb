@@ -1,0 +1,24 @@
+<p>
+  <b>Artist:</b>
+  <%=h @song.artist_id %>
+  <%=h @song.artist.name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%=h @song.genre_id %>
+  <%=h @song.genre.name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @song.name %>
+</p>
+
+<p>
+  <b>Popularity:</b>
+  <%=h @song.popularity %>
+</p>
+
+<%= link_to 'Cooccurrences', song_cooccurrences_path(@song) %>
+<%= link_to 'Back', artist_songs_path(@artist) %>

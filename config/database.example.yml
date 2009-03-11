@@ -1,0 +1,20 @@
+# Edit this file with your DB configuration, then save as database.yml
+
+defaults: &defaults
+  adapter: mysql
+  encoding: utf8
+  username: <your DB username>
+  password: <your DB password>
+  socket: /tmp/mysql.sock
+
+development:
+  database: pwr_development
+  <<: *defaults
+
+test:
+  database: pwr_test 
+  <<: *defaults
+
+production:
+  database: pwr_production
+  <<: *defaults

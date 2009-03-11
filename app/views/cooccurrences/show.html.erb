@@ -1,0 +1,31 @@
+<p>
+  <b>Song:</b>
+  <%=h @cooccurrence.song_id %>
+  <%=h @cooccurrence.song.name %>
+  <%=h @cooccurrence.song.artist.name %>
+</p>
+
+<p>
+  <b>Next song:</b>
+  <%=h @cooccurrence.next_song_id %>
+  <%=h @cooccurrence.next_song.name %>
+  <%=h @cooccurrence.next_song.artist.name %>
+</p>
+
+<p>
+  <b>D1:</b>
+  <%=h @cooccurrence.d1 %>
+</p>
+
+<p>
+  <b>D2:</b>
+  <%=h @cooccurrence.d2 %>
+</p>
+
+<p>
+  <b>D3:</b>
+  <%=h @cooccurrence.d3 %>
+</p>
+
+
+<%= link_to 'Back', cooccurrences_path %>

@@ -1,0 +1,3 @@
+* v0.1 (2009-03-11)
+
+First deploy, including legacy data (MusicStrands co-occurrences, songs, artists, genres) in a zipped archive. The Web interface allows navigation between the models, but does not yet include a model for associations and evaluation; only co-occurrence counts and distances are shown.

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  song_id: 1
+  next_song_id: 1
+  d1: 1
+  d2: 1
+  d3: 1
+
+two:
+  song_id: 1
+  next_song_id: 1
+  d1: 1
+  d2: 1
+  d3: 1

@@ -1,0 +1,23 @@
+<h1>Listing songs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Popularity</th>
+  </tr>
+
+<% for song in @songs %>
+  <tr>
+    <td><%=h song.name %></td>
+    <td><%= link_to h(song.artist.name), song.artist %></td>
+    <td><%= link_to h(song.genre.name), song.genre %></td>
+    <td><%=h song.popularity %></td>
+    <td><%= link_to 'Show', song %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @songs %>

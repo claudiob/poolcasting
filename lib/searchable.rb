@@ -1,5 +1,3 @@
-# This module will make search available to different models (song, artist, ..)
-# I just need to find out how to extend ActiveRecord
 module Searchable
   
   class << self

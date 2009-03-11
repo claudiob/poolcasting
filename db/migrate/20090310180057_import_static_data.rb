@@ -3,20 +3,13 @@ require 'fastercsv'
 require 'ar-extensions'
 
 class ImportStaticData < ActiveRecord::Migration # could be renamed Import Legacy Data
+  include Importable
   def self.up
     Zip::ZipFile.open('db/data/cooccurrences.zip') { |zipfile|
-      genres = FasterCSV.parse(zipfile.read('genres.csv'))
-      Genre.import [:id, :name, :popularity], genres, {:validate => false}
-
-      artists = FasterCSV.parse(zipfile.read('artists.csv'))
-      Artist.import [:id, :name, :popularity], artists, {:validate => false}
-
-      songs = FasterCSV.parse(zipfile.read('songs.csv'))
-      Song.import [:id, :name, :artist_id, :genre_id, :popularity], songs, {:validate => false}
-
-      # The next is very slow (4432.2081s), so I should rewrite this with a direct MySQL multiple insert statement
-      coocc = FasterCSV.parse(zipfile.read('cooccurrences.csv'))
-      Cooccurrence.import [:song_id, :next_song_id, :d1, :d2, :d3], coocc, {:validate => false}
+      fast_import zipfile, Genre, [:id, :name, :popularity]
+      fast_import zipfile, Artist, [:id, :name, :popularity] 
+      fast_import zipfile, Song, [:id, :name, :artist_id, :genre_id, :popularity] 
+      fast_import zipfile, Cooccurrence, [:song_id, :next_song_id, :d1, :d2, :d3] 
     }
   end
 

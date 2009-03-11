@@ -1,0 +1,27 @@
+= Song Association Evaluation
+
+This project provides a framework to evaluate musical associations
+derived from co-occurrences in MusicStrands playlists.
+
+== Author
+
+Author: Claudio Baccigalupo
+License: Ruby License
+
+== State
+
+In development
+
+== Features
+
+== Installation
+
+1) Include gems: rubyzip, fastercsv, ar-extensions, will_paginate
+2) Save database.example.yml as database.yml with proper database account
+3) rank db:create:all
+4) rake db:migrate
+
+== Examples
+
+
+

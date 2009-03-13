@@ -1,0 +1,35 @@
+<h1>New parameter</h1>
+
+<% form_for(@parameter) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "alpha" %><br />
+    <%= f.text_field :alpha %>
+  </p>
+  <p>
+    <%= f.label "beta" %><br />
+    <%= f.text_field :beta %>
+  </p>
+  <p>
+    <%= f.label "gamma" %><br />
+    <%= f.text_field :gamma %>
+  </p>
+  <p>
+    <%= f.label "delta" %><br />
+    <%= f.text_field :delta %>
+  </p>
+  <p>
+    <%= f.label "phi" %><br />
+    <%= f.text_field :phi %>
+  </p>
+  <p>
+    <%= f.label "psi" %><br />
+    <%= f.text_field :psi %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', parameters_path %>

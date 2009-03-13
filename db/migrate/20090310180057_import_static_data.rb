@@ -1,15 +1,13 @@
 require 'zip/zip'
-require 'fastercsv'
-require 'ar-extensions'
 
-class ImportStaticData < ActiveRecord::Migration # could be renamed Import Legacy Data
+class ImportStaticData < ActiveRecord::Migration # could be renamed Legacy Data
   include Importable
   def self.up
-    Zip::ZipFile.open('db/data/cooccurrences.zip') { |zipfile|
-      fast_import zipfile, Genre, [:id, :name, :popularity]
-      fast_import zipfile, Artist, [:id, :name, :popularity] 
-      fast_import zipfile, Song, [:id, :name, :artist_id, :genre_id, :popularity] 
-      fast_import zipfile, Cooccurrence, [:song_id, :next_song_id, :d1, :d2, :d3] 
+    Zip::ZipFile.open('db/data/cooccurrences.zip') { |zf|
+      fast_import zf, Genre, [:id, :name, :popularity]
+      fast_import zf, Artist, [:id, :name, :popularity] 
+      fast_import zf, Song, [:id, :name, :artist_id, :genre_id, :popularity] 
+      fast_import zf, Cooccurrence, [:song_id, :next_song_id, :d1, :d2, :d3] 
     }
   end
 

@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/openstrands"]
+	path = vendor/plugins/openstrands
+	url = git://github.com/claudiob/openstrands.git

@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Alpha</th>
+    <th>Beta</th>
+    <th>Gamma</th>
+    <th>Delta</th>
+    <th>Phi</th>
+    <th>Psi</th>
+  </tr>
+  <tr>
+    <td><%=h @parameter.alpha %></td>
+    <td><%=h @parameter.beta %></td>
+    <td><%=h @parameter.gamma %></td>
+    <td><%=h @parameter.delta %></td>
+    <td><%=h @parameter.phi %></td>
+    <td><%=h @parameter.psi %></td>
+  </tr>
+</table>
+
+<%= link_to 'Associations', parameter_associations_path(@parameter) %>
+
+<%= link_to 'Back', parameters_path %>
+

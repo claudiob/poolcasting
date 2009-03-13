@@ -1,0 +1,27 @@
+<h1>Listing parameters</h1>
+
+<table>
+  <tr>
+    <th>Alpha</th>
+    <th>Beta</th>
+    <th>Gamma</th>
+    <th>Delta</th>
+    <th>Phi</th>
+    <th>Psi</th>
+  </tr>
+
+<% for parameter in @parameters %>
+  <tr>
+    <td><%=h parameter.alpha %></td>
+    <td><%=h parameter.beta %></td>
+    <td><%=h parameter.gamma %></td>
+    <td><%=h parameter.delta %></td>
+    <td><%=h parameter.phi %></td>
+    <td><%=h parameter.psi %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Update parameters', new_parameter_path %>

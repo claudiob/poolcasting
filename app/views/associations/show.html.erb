@@ -1,0 +1,23 @@
+<p>
+  <b>Song:</b>
+  <%=h @association.cooccurrence.predecessor_id %>
+  <%=h @association.cooccurrence.predecessor.name %>
+</p>
+
+<p>
+  <b>Next song:</b>
+  <%=h @association.cooccurrence.successor_id %>
+  <%=h @association.cooccurrence.successor.name %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @association.song_to_song %>
+  <%=h @association.song_to_artist %>
+  <%=h @association.artist_to_artist %>
+  <%=h @association.degree %>
+</p>
+
+<%= link_to 'Parameter', @association.parameter %>
+
+<%= link_to 'Back', associations_path %>

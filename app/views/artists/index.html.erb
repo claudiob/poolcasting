@@ -3,13 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Popularity</th>
+    <th>Estimated popularity</th>
   </tr>
 
 <% for artist in @artists %>
   <tr>
     <td><%=h artist.name %></td>
-    <td><%=h artist.popularity %></td>
+    <td><%=h artist.csp %></td>
     <td><%= link_to 'Show', artist %></td>
   </tr>
 <% end %>

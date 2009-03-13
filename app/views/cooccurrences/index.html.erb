@@ -11,12 +11,10 @@
 
 <% for cooccurrence in @cooccurrences %>
   <tr>
-    <td><%=h cooccurrence.song_id %></td>
-    <td><%=h cooccurrence.song.name %></td>
-    <td><%=h cooccurrence.song.artist.name %></td>
-    <td><%=h cooccurrence.next_song_id %></td>
-    <td><%=h cooccurrence.next_song.name %></td>
-    <td><%=h cooccurrence.next_song.artist.name %></td>
+    <td><%=h cooccurrence.predecessor_id %></td>
+    <td><%=h cooccurrence.predecessor.name %></td>
+    <td><%=h cooccurrence.successor.id %></td>
+    <td><%=h cooccurrence.successor.name %></td>
     <td><%=h cooccurrence.d1 %></td>
     <td><%=h cooccurrence.d2 %></td>
     <td><%=h cooccurrence.d3 %></td>

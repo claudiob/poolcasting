@@ -1,15 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :associations
+
+  map.resources :parameters, :has_many => :associations
+
   map.root :controller => 'songs'
 
   map.resources :cooccurrences
 
   map.resources :songs, :has_one => [:artist, :genre], :has_many => [:cooccurrences]
+  map.resources :songs do |song|
+    song.resources :associations
+  end
 
   map.resources :genres, :has_many => :songs
 
   map.resources :artists, :has_many => :songs
 
-  map.resources :cooccurrences, :has_one => :song
+  map.resources :cooccurrences, :has_one => [:song, :association]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

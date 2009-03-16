@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Estimated popularity</th>
   </tr>
 
-<% for artist in @artists %>
+<% @artists.each do |artist| %>
   <tr>
     <td><%=h artist.name %></td>
-    <td><%=h artist.csp %></td>
     <td><%= link_to 'Show', artist %></td>
   </tr>
 <% end %>
@@ -17,4 +15,3 @@
 
 <br />
 
-<%= will_paginate @artists %>

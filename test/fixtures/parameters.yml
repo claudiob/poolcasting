@@ -1,9 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  value: 1.5
+  alpha2: 1.5
+  alpha3: 1.5
+  beta: 1.5
+  gamma: 1.5
+  phi2: 1.5
+  phi3: 1.5
 
 two:
-  name: MyString
-  value: 1.5
+  alpha2: 1.5
+  alpha3: 1.5
+  beta: 1.5
+  gamma: 1.5
+  phi2: 1.5
+  phi3: 1.5

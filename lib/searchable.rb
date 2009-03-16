@@ -7,7 +7,8 @@ module Searchable
     
     module ClassMethods
       def search(page, options = {})
-        paginate :page => page, :per_page  => 20, 
+        paginate :page => page, :per_page  => 20,
+              :joins => options[:joins],
               :conditions => options[:conditions], 
               :include => options[:include],
               :order => options[:order]

@@ -3,10 +3,5 @@
   <%=h @artist.name %>
 </p>
 
-<p>
-  <b>Estimated popularity:</b>
-  <%=h @artist.csp %>
-</p>
 
-<%= link_to 'Songs', artist_songs_path(@artist) %>
 <%= link_to 'Back', artists_path %>

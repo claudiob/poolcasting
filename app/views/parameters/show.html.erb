@@ -1,23 +1,33 @@
-<table>
-  <tr>
-    <th>Alpha</th>
-    <th>Beta</th>
-    <th>Gamma</th>
-    <th>Delta</th>
-    <th>Phi</th>
-    <th>Psi</th>
-  </tr>
-  <tr>
-    <td><%=h @parameter.alpha %></td>
-    <td><%=h @parameter.beta %></td>
-    <td><%=h @parameter.gamma %></td>
-    <td><%=h @parameter.delta %></td>
-    <td><%=h @parameter.phi %></td>
-    <td><%=h @parameter.psi %></td>
-  </tr>
-</table>
+<p>
+  <b>Alpha2:</b>
+  <%=h @parameter.alpha2 %>
+</p>
 
-<%= link_to 'Associations', parameter_associations_path(@parameter) %>
+<p>
+  <b>Alpha3:</b>
+  <%=h @parameter.alpha3 %>
+</p>
 
+<p>
+  <b>Beta:</b>
+  <%=h @parameter.beta %>
+</p>
+
+<p>
+  <b>Gamma:</b>
+  <%=h @parameter.gamma %>
+</p>
+
+<p>
+  <b>Phi2:</b>
+  <%=h @parameter.phi2 %>
+</p>
+
+<p>
+  <b>Phi3:</b>
+  <%=h @parameter.phi3 %>
+</p>
+
+
+<%= link_to 'Edit', edit_parameter_path(@parameter) %> |
 <%= link_to 'Back', parameters_path %>
-

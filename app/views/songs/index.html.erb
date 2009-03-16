@@ -1,23 +1,22 @@
 <h1>Listing songs</h1>
+<h2>with post-occurrences</h2>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Artist</th>
-    <th>Genre</th>
-    <th>Estimated popularity</th>
+    <th>Artist name</th>
   </tr>
 
-<% for song in @songs %>
+<% @songs.each do |song| %>
   <tr>
     <td><%=h song.name %></td>
-    <td><%= link_to( h(song.artist.name), song.artist) unless song.artist.nil? %></td>
-    <td><%= link_to( h(song.genre.name), song.genre) unless song.genre.nil? %></td>
-    <td><%=h song.csp %></td>
+    <td><%=h song.artist.name %></td>
     <td><%= link_to 'Show', song %></td>
+    <td><%= link_to 'Preoccurrences', song_cooccurrences_path(song) %></td>
   </tr>
 <% end %>
 </table>
+
 <br />
 
 <%= will_paginate @songs %>

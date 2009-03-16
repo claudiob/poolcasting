@@ -1,5 +1,5 @@
 require 'fastercsv'
-require 'ar-extensions'
+# require 'ar-extensions'
 if ActiveRecord::Base.configurations[RAILS_ENV]["adapter"] == "mysql"
   require 'ar-extensions/adapters/mysql'
   require 'ar-extensions/import/mysql'

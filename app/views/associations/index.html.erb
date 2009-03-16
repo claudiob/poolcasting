@@ -1,21 +1,23 @@
 <h1>Listing associations</h1>
-
-<%= link_to 'Recalculate association', '' %>
+<% unless @first_song.nil? %>
+<h2>for <%= @first_song.title %></h2>
+<% end%>
 
 <table>
   <tr>
-    <th>Song</th>
-    <th>Next song</th>
-    <th>Value</th>
+    <% if @first_song.nil? %><th>Song</th><% end %>
+    <th>Next Song</th>
+    <th>Parameter</th>
+    <th>Degree</th>
   </tr>
 
-<% for association in @associations %>
+<% @associations.each do |association| %>
   <tr>
-    <td><%=h association.predecessor.name %></td>
-    <td><%=h association.successor.name %></td>
+	<% if @first_song.nil? %><td><%= link_to association.cooccurrence.first_song.title, :controller => "songs", :action => "show", :id => association.cooccurrence.song_id %></td><% end %>
+    <td><%=h association.cooccurrence.next_song.title %></td>
+    <td><%= link_to 'Parameters', parameter_path(association.parameter) %></td>
     <td><%=h association.degree %></td>
-    <td><%= link_to 'Show', association %></td>
-    <td><%= link_to 'Rate', '' %></td>
+    <td><%= link_to 'Evaluate', association %></td>
   </tr>
 <% end %>
 </table>

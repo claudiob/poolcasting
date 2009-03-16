@@ -1,0 +1,2 @@
+module OpensongsHelper
+end

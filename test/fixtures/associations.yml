@@ -1,13 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  song_id: 1
-  next_song_id: 1
-  value: 1.5
-  created_at: 2009-03-11 16:28:24
+  cooccurrence: 
+  parameter: 
+  degree: 1.5
+  song_to_song: 1.5
+  song_to_artist: 1.5
+  artist_to_artist: 1.5
 
 two:
-  song_id: 1
-  next_song_id: 1
-  value: 1.5
-  created_at: 2009-03-11 16:28:24
+  cooccurrence: 
+  parameter: 
+  degree: 1.5
+  song_to_song: 1.5
+  song_to_artist: 1.5
+  artist_to_artist: 1.5

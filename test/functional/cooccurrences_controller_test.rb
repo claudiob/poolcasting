@@ -21,23 +21,23 @@ class CooccurrencesControllerTest < ActionController::TestCase
   end
 
   test "should show cooccurrence" do
-    get :show, :id => cooccurrences(:one).id
+    get :show, :id => cooccurrences(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => cooccurrences(:one).id
+    get :edit, :id => cooccurrences(:one).to_param
     assert_response :success
   end
 
   test "should update cooccurrence" do
-    put :update, :id => cooccurrences(:one).id, :cooccurrence => { }
+    put :update, :id => cooccurrences(:one).to_param, :cooccurrence => { }
     assert_redirected_to cooccurrence_path(assigns(:cooccurrence))
   end
 
   test "should destroy cooccurrence" do
     assert_difference('Cooccurrence.count', -1) do
-      delete :destroy, :id => cooccurrences(:one).id
+      delete :destroy, :id => cooccurrences(:one).to_param
     end
 
     assert_redirected_to cooccurrences_path

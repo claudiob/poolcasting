@@ -21,23 +21,23 @@ class AssociationsControllerTest < ActionController::TestCase
   end
 
   test "should show association" do
-    get :show, :id => associations(:one).id
+    get :show, :id => associations(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => associations(:one).id
+    get :edit, :id => associations(:one).to_param
     assert_response :success
   end
 
   test "should update association" do
-    put :update, :id => associations(:one).id, :association => { }
+    put :update, :id => associations(:one).to_param, :association => { }
     assert_redirected_to association_path(assigns(:association))
   end
 
   test "should destroy association" do
     assert_difference('Association.count', -1) do
-      delete :destroy, :id => associations(:one).id
+      delete :destroy, :id => associations(:one).to_param
     end
 
     assert_redirected_to associations_path

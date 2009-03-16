@@ -1,10 +1,8 @@
 class ParametersController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
-
   # GET /parameters
   # GET /parameters.xml
   def index
-    @parameters = Parameter.find(:all)
+    @parameters = Parameter.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +24,7 @@ class ParametersController < ApplicationController
   # GET /parameters/new
   # GET /parameters/new.xml
   def new
-    @parameter = Parameter.active
+    @parameter = Parameter.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,14 +32,14 @@ class ParametersController < ApplicationController
     end
   end
 
-  # PUT /parameters/1
-  # PUT /parameters/1.xml
-  def update
+  # POST /parameters
+  # POST /parameters.xml
+  def create
     @parameter = Parameter.new(params[:parameter])
+
     respond_to do |format|
       if @parameter.save
-        # Here I should recalculate some associations, depending on the parameters changed
-        flash[:notice] = 'Parameters were successfully updated.'
+        flash[:notice] = 'Parameter was successfully created.'
         format.html { redirect_to(@parameter) }
         format.xml  { render :xml => @parameter, :status => :created, :location => @parameter }
       else
@@ -51,11 +49,4 @@ class ParametersController < ApplicationController
     end
   end
 
-  protected
-
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == "foo" && password == "bar"
-    end
-  end  
 end

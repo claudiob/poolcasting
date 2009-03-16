@@ -1,26 +1,13 @@
 <p>
-  <b>Artist:</b>
-  <%=h @song.artist_id %>
-  <%=h @song.artist.name %>
-  <%= @player %>
-</p>
-
-<p>
-  <b>Genre:</b>
-  <%=h @song.genre_id %>
-  <%=h @song.genre.name %>
-</p>
-
-<p>
   <b>Name:</b>
   <%=h @song.name %>
 </p>
 
 <p>
-  <b>Estimated Popularity:</b>
-  <%=h @song.csp %>
+  <b>Artist name:</b>
+  <%=h @song.artist.name %>
 </p>
 
-<%= link_to 'Associations', song_associations_path(@song) %>
-<%= link_to 'Cooccurrences', song_cooccurrences_path(@song) %>
+<%= link_to 'Preoccurrences', song_cooccurrences_path(@song) %> |
+
 <%= link_to 'Back', songs_path %>

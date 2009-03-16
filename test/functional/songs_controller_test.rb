@@ -21,23 +21,23 @@ class SongsControllerTest < ActionController::TestCase
   end
 
   test "should show song" do
-    get :show, :id => songs(:one).id
+    get :show, :id => songs(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => songs(:one).id
+    get :edit, :id => songs(:one).to_param
     assert_response :success
   end
 
   test "should update song" do
-    put :update, :id => songs(:one).id, :song => { }
+    put :update, :id => songs(:one).to_param, :song => { }
     assert_redirected_to song_path(assigns(:song))
   end
 
   test "should destroy song" do
     assert_difference('Song.count', -1) do
-      delete :destroy, :id => songs(:one).id
+      delete :destroy, :id => songs(:one).to_param
     end
 
     assert_redirected_to songs_path

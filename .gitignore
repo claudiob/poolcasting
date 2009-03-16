@@ -7,3 +7,4 @@ db/schema.rb
 config/last_fm.yml
 config/openstrands.yml
 config/openstrands.oauth.yml
+db/data/opensongs.zip

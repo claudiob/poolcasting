@@ -4,23 +4,31 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :song_id %><br />
-    <%= f.text_field :song_id %>
+    <%= f.label :cooccurrence %><br />
+    <%= f.text_field :cooccurrence %>
   </p>
   <p>
-    <%= f.label :next_song_id %><br />
-    <%= f.text_field :next_song_id %>
+    <%= f.label :parameter %><br />
+    <%= f.text_field :parameter %>
   </p>
   <p>
-    <%= f.label :value %><br />
-    <%= f.text_field :value %>
+    <%= f.label :degree %><br />
+    <%= f.text_field :degree %>
   </p>
   <p>
-    <%= f.label :created_at %><br />
-    <%= f.datetime_select :created_at %>
+    <%= f.label :song_to_song %><br />
+    <%= f.text_field :song_to_song %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.label :song_to_artist %><br />
+    <%= f.text_field :song_to_artist %>
+  </p>
+  <p>
+    <%= f.label :artist_to_artist %><br />
+    <%= f.text_field :artist_to_artist %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
   </p>
 <% end %>
 

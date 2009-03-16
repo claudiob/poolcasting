@@ -16,10 +16,13 @@ In development
 
 == Installation
 
-1) Include gems: rubyzip, fastercsv, ar-extensions, will_paginate
+1) git clone git@github.com:claudiob/poolcasting.git pwr 
 2) Save database.example.yml as database.yml with proper database account
-3) rank db:create:all
-4) rake db:migrate
+3) git submodule update --init
+# BUG: This will not run install.rb of plugins, and require step 4)
+4) Create config/openstrands.yml with proper Openstrands account
+5) rake db:create:all
+6) rake db:migrate
 
 == Examples
 

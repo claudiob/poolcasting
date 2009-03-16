@@ -1,31 +1,19 @@
 <p>
   <b>Song:</b>
-  <%=h @cooccurrence.predecessor_id %>
-  <%=h @cooccurrence.predecessor.name %>
+  <%=h @cooccurrence.first_song.title %>
 </p>
 
 <p>
   <b>Next song:</b>
-  <%=h @cooccurrence.successor_id %>
-  <%=h @cooccurrence.successor.name %>
+  <%=h @cooccurrence.next_song.title %>
 </p>
 
 <p>
-  <b>D1:</b>
-  <%=h @cooccurrence.d1 %>
-</p>
-
-<p>
-  <b>D2:</b>
-  <%=h @cooccurrence.d2 %>
-</p>
-
-<p>
-  <b>D3:</b>
+  <b>Count:</b>
+  <%=h @cooccurrence.d1 %> |
+  <%=h @cooccurrence.d2 %> |
   <%=h @cooccurrence.d3 %>
 </p>
 
-
-<%= link_to 'Association', @cooccurrence.association %>
 
 <%= link_to 'Back', cooccurrences_path %>

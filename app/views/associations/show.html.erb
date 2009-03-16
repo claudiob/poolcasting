@@ -1,23 +1,37 @@
 <p>
   <b>Song:</b>
-  <%=h @association.cooccurrence.predecessor_id %>
-  <%=h @association.cooccurrence.predecessor.name %>
+  <%=h @association.cooccurrence.first_song.title %>
 </p>
 
 <p>
   <b>Next song:</b>
-  <%=h @association.cooccurrence.successor_id %>
-  <%=h @association.cooccurrence.successor.name %>
+  <%=h @association.cooccurrence.next_song.title %>
 </p>
 
 <p>
-  <b>Value:</b>
-  <%=h @association.song_to_song %>
-  <%=h @association.song_to_artist %>
-  <%=h @association.artist_to_artist %>
+  <b>Parameter:</b>
+  <%= link_to 'Parameters', parameter_path(@association.parameter) %>
+</p>
+
+<p>
+  <b>Degree:</b>
   <%=h @association.degree %>
 </p>
 
-<%= link_to 'Parameter', @association.parameter %>
+<p>
+  <b>Song to song:</b>
+  <%=h @association.song_to_song %>
+</p>
 
+<p>
+  <b>Song to artist:</b>
+  <%=h @association.song_to_artist %>
+</p>
+
+<p>
+  <b>Artist to artist:</b>
+  <%=h @association.artist_to_artist %>
+</p>
+
+<%= link_to 'Evaluate', new_association_evaluation_path(@association) %> |
 <%= link_to 'Back', associations_path %>

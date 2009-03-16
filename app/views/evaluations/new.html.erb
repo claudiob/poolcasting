@@ -1,0 +1,31 @@
+<h1>New evaluation</h1>
+
+<p>
+  <b>Song:</b>
+  <%=h @association.cooccurrence.first_song.title %><br />
+  <%=h @association.cooccurrence.first_song.identifications[0].identifier[:track_name] %>
+  <%=h @association.cooccurrence.first_song.identifications[0].identifier[:artist_name] %><br />
+  <%= image_tag @association.cooccurrence.first_song.identifications[0].identifier[:small_cover_uri] %>
+  <%= link_to 'Listen (WMA)', "/songs/#{@association.cooccurrence.song_id}.wma" %>
+  <%= link_to 'Listen (RM)', "/songs/#{@association.cooccurrence.song_id}.rm" %>
+</p>
+
+<p>
+  <b>Next song:</b>
+  <%=h @association.cooccurrence.next_song.title %><br />
+  <%=h @association.cooccurrence.next_song.identifications[0].identifier[:track_name] %>
+  <%=h @association.cooccurrence.next_song.identifications[0].identifier[:artist_name] %><br />
+  <%= image_tag @association.cooccurrence.next_song.identifications[0].identifier[:small_cover_uri] %>
+  <%= link_to 'Listen (WMA)', "/songs/#{@association.cooccurrence.next_song_id}.wma" %>
+  <%= link_to 'Listen (RM)', "/songs/#{@association.cooccurrence.next_song_id}.rm" %>
+</p>
+
+<% form_for(@evaluation) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :association_id, :value => @association.id %>
+  <%= f.submit "Good", :name => "submit" %>
+  <%= f.submit "Bad", :name => "submit" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', evaluations_path %>

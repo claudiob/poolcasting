@@ -2,18 +2,14 @@ class CooccurrencesController < ApplicationController
   # GET /cooccurrences
   # GET /cooccurrences.xml
   def index
-    conditions = {}
     unless params[:song_id].blank?
-      conditions[:predecessor_id] = params[:song_id]
-      conditions[:predecessor_type] = 'Song'
+      @first_song = Song.find(params[:song_id]) 
+      conditions = "song_id = #{@first_song.id}"
     end
-    unless params[:artist_id].blank?
-      conditions[:predecessor_id] = params[:artist_id]
-      conditions[:predecessor_type] = 'Artist'
-    end
-    @cooccurrences = Cooccurrence.search(params[:page], 
-      :conditions => conditions) #, :include => [:predecessor, :successor] )
-      # Add indexes in order to do :order => 'd1 DESC, d2 DESC, d3 DESC')
+    @cooccurrences = Cooccurrence.paginate(:conditions => conditions,
+      :joins => "JOIN songs s1 ON s1.id = song_id JOIN songs s2 ON s2.id = next_song_id",
+      :page => params[:page], :per_page  => 15)
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @cooccurrences }
@@ -23,7 +19,8 @@ class CooccurrencesController < ApplicationController
   # GET /cooccurrences/1
   # GET /cooccurrences/1.xml
   def show
-    @cooccurrence = Cooccurrence.by_song.find(params[:id], :include => [:predecessor, :successor])
+    @cooccurrence = Cooccurrence.find(params[:id],
+      :joins => "JOIN songs s1 ON s1.id = song_id JOIN songs s2 ON s2.id = next_song_id")
 
     respond_to do |format|
       format.html # show.html.erb

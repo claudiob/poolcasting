@@ -1,0 +1,19 @@
+
+<p>
+  <b>Song:</b>
+  <%=h @evaluation.association.cooccurrence.first_song.title %>
+</p>
+
+<p>
+  <b>Next song:</b>
+  <%=h @evaluation.association.cooccurrence.next_song.title %>
+</p>
+
+<p>
+  <b>Degree:</b>
+  <%=h @evaluation.degree %>
+</p>
+
+
+<%= link_to 'Edit', edit_evaluation_path(@evaluation) %> |
+<%= link_to 'Back', evaluations_path %>

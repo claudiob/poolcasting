@@ -1,0 +1,11 @@
+<h1>New identification</h1>
+
+<% form_for(@identification) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', identifications_path %>

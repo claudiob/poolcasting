@@ -1,0 +1,19 @@
+<h1>Editing evaluation</h1>
+
+<% form_for(@evaluation) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.hidden_field :association_id %>
+  </p>
+  <p>
+    <%= f.label :degree %><br />
+    <%= f.text_field :degree %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @evaluation %> |
+<%= link_to 'Back', evaluations_path %>

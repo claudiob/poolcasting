@@ -21,23 +21,23 @@ class ParametersControllerTest < ActionController::TestCase
   end
 
   test "should show parameter" do
-    get :show, :id => parameters(:one).id
+    get :show, :id => parameters(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => parameters(:one).id
+    get :edit, :id => parameters(:one).to_param
     assert_response :success
   end
 
   test "should update parameter" do
-    put :update, :id => parameters(:one).id, :parameter => { }
+    put :update, :id => parameters(:one).to_param, :parameter => { }
     assert_redirected_to parameter_path(assigns(:parameter))
   end
 
   test "should destroy parameter" do
     assert_difference('Parameter.count', -1) do
-      delete :destroy, :id => parameters(:one).id
+      delete :destroy, :id => parameters(:one).to_param
     end
 
     assert_redirected_to parameters_path

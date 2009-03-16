@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  csp: 1
 
 two:
   name: MyString
-  csp: 1

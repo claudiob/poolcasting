@@ -21,23 +21,23 @@ class ArtistsControllerTest < ActionController::TestCase
   end
 
   test "should show artist" do
-    get :show, :id => artists(:one).id
+    get :show, :id => artists(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => artists(:one).id
+    get :edit, :id => artists(:one).to_param
     assert_response :success
   end
 
   test "should update artist" do
-    put :update, :id => artists(:one).id, :artist => { }
+    put :update, :id => artists(:one).to_param, :artist => { }
     assert_redirected_to artist_path(assigns(:artist))
   end
 
   test "should destroy artist" do
     assert_difference('Artist.count', -1) do
-      delete :destroy, :id => artists(:one).id
+      delete :destroy, :id => artists(:one).to_param
     end
 
     assert_redirected_to artists_path

@@ -1,20 +1,21 @@
-<h1>Listing cooccurrences</h1>
+<h1>Listing co-occurrences</h1> 
+<% unless @first_song.nil? %>
+<h2>for <%= @first_song.title %></h2>
+<% end%>
 
 <table>
   <tr>
-    <th colspan="2">Song</th>
-    <th colspan="2">Next song</th>
+    <% if @first_song.nil? %><th>Song</th><% end %>
+    <th>Next song</th>
     <th>D1</th>
     <th>D2</th>
     <th>D3</th>
   </tr>
 
-<% for cooccurrence in @cooccurrences %>
+<% @cooccurrences.each do |cooccurrence| %>
   <tr>
-    <td><%=h cooccurrence.predecessor_id %></td>
-    <td><%=h cooccurrence.predecessor.name %></td>
-    <td><%=h cooccurrence.successor.id %></td>
-    <td><%=h cooccurrence.successor.name %></td>
+	<% if @first_song.nil? %><td><%= link_to cooccurrence.first_song.title, :controller => "songs", :action => "show", :id =>  cooccurrence.song_id %></td><% end %>
+    <td><%=h cooccurrence.next_song.title %></td>
     <td><%=h cooccurrence.d1 %></td>
     <td><%=h cooccurrence.d2 %></td>
     <td><%=h cooccurrence.d3 %></td>

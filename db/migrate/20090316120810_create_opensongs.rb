@@ -20,8 +20,8 @@ class CreateOpensongs < ActiveRecord::Migration
     if File.exists? 'db/data/opensongs.zip' # tmp file to speed up loading
       Zip::ZipFile.open('db/data/opensongs.zip') { |zipfile|
         fast_import zipfile, Opensong, [:id, :track_id, :artist_id, 
-          :wma_clip_uri, :cover_uri, :album_name, :artist_name, :rm_clip_uri, 
-          :rm_mobile_clip_uri, :small_cover_uri, :genre, :uri] 
+          :track_name,:wma_clip_uri, :cover_uri, :album_name, :artist_name, 
+          :rm_clip_uri, :rm_mobile_clip_uri, :small_cover_uri, :genre, :uri] 
         fast_import zipfile, Identification, [:id, :item_id, :item_type, 
           :identifier_id, :identifier_type] 
       }

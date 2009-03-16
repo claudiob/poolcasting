@@ -11,6 +11,8 @@ class Song < ActiveRecord::Base
   named_scope :not_occurring_after, lambda { |first_song| 
     { :conditions => ['id NOT IN (SELECT DISTINCT next_song_id FROM
       cooccurrences WHERE song_id = ?)', first_song] }}  
+  named_scope :identified, :joins => "JOIN identifications ON 
+    item_type = 'Song' AND item_id = songs.id"
   
   def title
     # This will be overwritten by the identifier

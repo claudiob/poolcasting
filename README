@@ -21,8 +21,10 @@ In development
 3) git submodule update --init
 # BUG: This will not run install.rb of plugins, and require step 4)
 4) Create config/openstrands.yml with proper Openstrands account
-5) rake db:create:all
-6) rake db:migrate
+5) rake gems:install
+6) rake db:create:all
+*) (optional) copy more legacy data into db/data/
+7) rake db:migrate
 
 == Examples
 

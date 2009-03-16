@@ -2,6 +2,7 @@ require 'zip/zip'
 
 class CreateOpensongs < ActiveRecord::Migration
   def self.up
+    include Importable
     create_table :opensongs do |t|
       t.integer :track_id
       t.integer :artist_id

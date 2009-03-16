@@ -17,8 +17,9 @@ class Association < ActiveRecord::Base
       self.identified.random   
     else
       # Create a fake cooccurrence and a fake association
-      s1 = Song.random
-      s2 = Song.not_occurring_after(s1).random
+      s1 = Song.identified.random
+      s2 = Song.identified.not_occurring_after(s1).random
+      # Add they should not be from the same artist or song
       c = Cooccurrence.create(:first_song => s1, :next_song => s2, :fake => true)
       Association.create(:cooccurrence => c, :parameter => Parameter.active)
     end

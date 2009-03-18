@@ -17,4 +17,4 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 # 2009.03.11 - rake db:migrate, let's see if this speeds it up
-config.active_record.schema_format = :sql
+# config.active_record.schema_format = :sql

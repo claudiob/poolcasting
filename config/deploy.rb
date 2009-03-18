@@ -24,8 +24,10 @@ after 'deploy:update_code', 'symlink_configs'
 task :symlink_configs, :roles=>:app do
   run <<-CMD
     cd #{release_path} &&
-    ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml
-    ln -nfs #{shared_path}/config/mongrel_cluster.yml #{release_path}/config/mongrel_cluster.yml
+    ln -fs #{shared_path}/config/database.yml #{release_path}/config/database.yml
+    ln -fs #{shared_path}/config/mongrel_cluster.yml #{release_path}/config/mongrel_cluster.yml
+    ln -fs #{shared_path}/config/openstrands.yml #{release_path}/config/openstrands.yml
+    ln -fs #{shared_path}/db/data/opensongs.zip #{release_path}/db/data/opensongs.zip
   CMD
 end
 
